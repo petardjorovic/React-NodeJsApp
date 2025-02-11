@@ -4,24 +4,6 @@ import ToggleModeComponent from "./ToggleModeComponent";
 import { SiElectron } from "react-icons/si";
 
 function NavbarComponent({ darkMode, setDarkMode }) {
-  const [MenuItems, setMenuItems] = useState([
-    {
-      path: "/",
-      label: "Home",
-    },
-    {
-      path: "/products",
-      label: "Products",
-    },
-    {
-      path: "/about",
-      label: "About",
-    },
-    {
-      path: "/contact",
-      label: "Contact",
-    },
-  ]);
   return (
     <header className="container mx-auto bg-green-200 text-slate-900 h-[80px] flex items-center justify-center dark:bg-green-900 dark:text-slate-200">
       <nav className="w-[95%] flex items-center justify-between">
@@ -33,13 +15,21 @@ function NavbarComponent({ darkMode, setDarkMode }) {
         </h1>
         <ToggleModeComponent darkMode={darkMode} setDarkMode={setDarkMode} />
         <ul className="flex items-center gap-[20px]">
-          {MenuItems.map((el, i) => {
-            return (
-              <li key={i}>
-                <NavLink to={el.path}>{el.label}</NavLink>
-              </li>
-            );
-          })}
+          <li>
+            <NavLink to={"/"}>Home</NavLink>
+          </li>
+          <li>
+            <NavLink to={"/products"}>Products</NavLink>
+          </li>
+          <li>
+            <NavLink to={"/about"}>About</NavLink>
+          </li>
+          <li>
+            <NavLink to={"/contact"}>Contact</NavLink>
+          </li>
+          <li>
+            <NavLink to={"/login"}>Login</NavLink>
+          </li>
         </ul>
       </nav>
     </header>

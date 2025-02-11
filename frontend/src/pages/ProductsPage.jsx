@@ -11,7 +11,6 @@ function ProductPages() {
       .then((res) => {
         setProducts(res.data);
         setIsLoaded(true);
-        toast.success("Data arrived");
       })
       .catch((err) => console.log(err));
   }, []);
